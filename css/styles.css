@@ -60,6 +60,17 @@ body {
 /* header */
 
 .header {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+
+  width: 100%;
+
   border-bottom: 1px solid #ececec;
 }
 
@@ -130,8 +141,20 @@ body {
   color: var(--acent-color);
 }
 
-.link.current {
-  color: var(--acent-color);
+.item.current {
+  position: relative;
+}
+
+.link.current::after {
+  content: '';
+  background-color: var(--acent-color);
+  height: 4px;
+  width: 48px;
+  display: flex;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 /* nav contacts */
@@ -249,6 +272,33 @@ body {
 
 .section.work {
   padding-top: 0;
+}
+
+.work-item {
+  position: relative;
+}
+
+.work-annexes {
+  height: 70px;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.annexes-title {
+  color: var(--white-color);
+
+  font-size: 14px;
+
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .comand-list:nth-child(n + 2),
