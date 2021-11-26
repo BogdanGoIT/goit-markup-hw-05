@@ -18,6 +18,7 @@
   --secondary-color-fon: #2f303a;
 
   --indent-set-gup: 30px;
+  --cubic-bazier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* reset */
@@ -132,6 +133,7 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--main-color);
+  transition: color 250ms var(--cubic-bazier);
 }
 
 .site-nav .link:hover,
@@ -359,9 +361,6 @@ body {
   margin-bottom: 30px;
 }
 
-.cmd-list {
-}
-
 .cmd-link {
   width: 44px;
   height: 44px;
@@ -459,6 +458,7 @@ body {
   line-height: 1.71;
   text-decoration: none;
   color: var(--white-color);
+  transition: color 250ms var(--cubic-bazier);
 }
 
 .footer-addr.cont {
@@ -619,4 +619,53 @@ body {
   padding-bottom: 15px;
 
   color: var(--secondary-color);
+}
+
+/* Модалка */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  width: 100vw;
+  height: 100vh;
+
+  transition: opacity 250ms var(--cubic-bazier);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  width: 528px;
+  min-height: 581px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
