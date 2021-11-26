@@ -141,7 +141,7 @@ body {
   color: var(--acent-color);
 }
 
-.item.current {
+.link.current {
   position: relative;
 }
 
@@ -274,29 +274,27 @@ body {
   padding-top: 0;
 }
 
-.work-item {
+.work-annexes {
   position: relative;
 }
 
-.work-annexes {
-  height: 70px;
+.annexes-title {
   width: 100%;
+  height: 70px;
+
   background: rgba(47, 48, 58, 0.8);
+  color: var(--white-color);
+
   position: absolute;
   bottom: 0;
   left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.annexes-title {
-  color: var(--white-color);
 
   font-size: 14px;
-
   line-height: 1.14;
-  text-align: center;
   text-transform: uppercase;
 }
 
