@@ -369,6 +369,7 @@ body {
   justify-content: center;
   fill: #afb1b8;
   border-radius: 50%;
+  transition: fill 250ms var(--cubic-bazier), background-color 250ms var(--cubic-bazier);
 }
 
 .cmd-link:hover,
@@ -421,6 +422,7 @@ body {
   height: 60px;
 
   fill: currentColor;
+  transition: color 250ms var(--cubic-bazier);
 }
 
 .clients-link:hover,
@@ -593,6 +595,32 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.cont-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.cont-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: var(--white-color);
+  background: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  transform: translateY(100%);
+  transition: transform 250ms var(--cubic-bazier);
+}
+
+.content-card:hover .cont-text {
+  transform: translateY(0);
+}
+
 .cont-description {
   padding: 20px 24px;
 }
@@ -633,12 +661,17 @@ body {
   width: 100vw;
   height: 100vh;
 
-  transition: opacity 250ms var(--cubic-bazier);
+  transition: opacity 500ms, visibility 500ms var(--cubic-bazier);
 }
 
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0.75) rotate(180deg) translate(100%);
 }
 
 .modal {
@@ -650,7 +683,10 @@ body {
   top: 50%;
   left: 50%;
 
+  transform: scale(1) rotate(0);
+  transition: transform 500ms;
   transform: translate(-50%, -50%);
+
   background-color: var(--white-color);
 }
 
