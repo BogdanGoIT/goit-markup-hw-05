@@ -535,6 +535,7 @@ body {
   background: #f5f4fa;
   border-radius: 4px;
   border: 1px solid transparent;
+  transition: background-color 250ms var(--cubic-bazier), color 250ms var(--cubic-bazier);
 }
 
 .filter-btn.active {
@@ -584,15 +585,20 @@ body {
 .content-card {
   display: block;
   text-decoration: none;
-  border-bottom: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  transition: box-shadow 250ms var(--cubic-bazier);
 }
 
 .content-card:hover,
 .content-card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.cont-description {
+  padding: 20px 24px;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
 }
 
 .cont-img {
@@ -619,14 +625,6 @@ body {
 
 .content-card:hover .cont-text {
   transform: translateY(0);
-}
-
-.cont-description {
-  padding: 20px 24px;
-}
-
-.content-card:hover .cont-description {
-  border: none;
 }
 
 .content-title {
