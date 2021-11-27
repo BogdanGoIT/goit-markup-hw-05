@@ -151,7 +151,7 @@ body {
   content: '';
   background-color: var(--acent-color);
   height: 4px;
-  width: 48px;
+  width: 100%;
   display: flex;
   border-radius: 2px;
   position: absolute;
