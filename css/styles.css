@@ -619,12 +619,16 @@ body {
   line-height: 1.56;
   letter-spacing: 0.03em;
 
-  transform: translateY(100%);
-  transition: transform 250ms var(--cubic-bazier);
+  /* transform: translateY(100%); */
+  transform: scale(0.5);
+  opacity: 0;
+  transition: transform 250ms var(--cubic-bazier), opacity 250ms var(--cubic-bazier);
 }
 
 .content-card:hover .cont-text {
-  transform: translateY(0);
+  /* transform: translateY(0); */
+  transform: scale(1);
+  opacity: 1;
 }
 
 .content-title {
